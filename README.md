@@ -9,7 +9,10 @@
             }})
                 })(jQuery);
 ```
-*extra json syntax
+
+
+#extra json syntax
+
     JSON的语法分为三种类型：
 1.简单值：可以在json中表示字符串，数值，布尔值，null。但不支持javascript中的undefined。
 ```

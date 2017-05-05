@@ -2,9 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    var books=
+        {
+            "title":"HTML",
+            "authors":[
+                    "LzCrazy"
+            ],
+            edition:1,
+            year:2017,
+            releaseDate:new Date(2017,6,6)
+
+        };
+
+    alert("看控制台");
+    var jsontext = JSON.stringify(books);
+    console.log(jsontext);
+    console.log("----------");
+
+   var booCopy = JSON.parse(jsontext);
+    console.log(booCopy);
+
+    console.log("------------");
+    var bookCopy = JSON.parse(jsontext, function(key, value){
+        if (key == "releaseDate"){
+            return new Date(value);
+        } else {
+            return value;
+        }
+    });
+
+    console.log(bookCopy.releaseDate.toISOString());
+
+</script>
 </body>
 </html>

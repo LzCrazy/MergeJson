@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+<script>
+    (function($)
+        {$.concat||$.extend
+        ({concat:function(){
+            return Array.prototype.concat.apply([],arguments);
+        }})
+            })(jQuery);
+    $(function() {
+        var json1 = [{id:1, name: 'xxx'}],
+                json2 = [{id:2, name: 'xyz'}],
+                json3 = [{id:3, name: 'xyy'}],
+                json4 = [{id:4, name: 'xzy'}],
+                json5 = [{id:5, name: 'zxy'}];
+
+        console.log(Array(10).join('-')+'(json1, json2, json3)'+Array(10).join('-'));
+        console.log($.concat(json1, json2, json3));
+        console.log(Array(10).join('-')+'(json1, json2, json3, json4, json5)'+Array(10).join('-'));
+        console.log($.concat(json1, json2, json3, json4, json5));
+        console.log(Array(10).join('-')+'(json4, json1, json2, json5)'+Array(10).join('-'));
+        console.log($.concat(json4, json1, json2, json5));
+    });
+</script>
+<center>See Console Log</center>
+</body>
+</html>
